@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: balu9963/springboot-demo
-  tag: 7
+  tag: 8
   pullPolicy: Always
 
 service:
