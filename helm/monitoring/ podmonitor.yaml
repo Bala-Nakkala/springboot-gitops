@@ -1,0 +1,24 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+
+metadata:
+  name: springboot-demo
+  namespace: monitoring
+
+  labels:
+    release: monitoring
+
+spec:
+
+  namespaceSelector:
+    matchNames:
+      - jenkins
+
+  selector:
+    matchLabels:
+      app: springboot-demo
+
+  podMetricsEndpoints:
+    - port: http
+      path: /actuator/prometheus
+      interval: 15s
